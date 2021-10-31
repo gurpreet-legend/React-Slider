@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
         alignItems: "center"
     },
     sliderImage: {
-        width: "60vw",
+        width: "50vw",
         height: "auto",
         borderRadius: "10px",        
     },
@@ -38,8 +38,14 @@ const useStyles = makeStyles(theme => ({
         zIndex: "10",
         userSelect: "none"
     },
-    active : {
-
+    activeSlide : {
+        opacity: "1",
+        transitionDuration:"1s",
+        transform: "scale(1.08)"
+    },
+    slide : {
+        opacity: "0",
+        transitionDuration: "1s ease"
     }
 
 }))
@@ -71,7 +77,7 @@ const ImageSlider = () => {
             <NavigateNextIcon className={classes.rightArrow} onClick={nextSlide}/>
             {SliderData.map((slide, index) => {
                 return (
-                    <div className={index === current ? 'activeSlide' : 'slide'} key={index}>
+                    <div className={index === current ? classes.activeSlide : classes.slide} key={index}>
                         {index === current && (<img src={slide.image} alt="image" className={classes.sliderImage} />)}
                         
                     </div>
