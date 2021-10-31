@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { SliderData } from './SliderData';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import FiberManualRecordTwoToneIcon from '@mui/icons-material/FiberManualRecordTwoTone';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import {makeStyles} from '@mui/styles';
 
 
@@ -47,6 +49,13 @@ const useStyles = makeStyles(theme => ({
         opacity: "0",
         transitionDuration: "1s ease"
     },
+    containerDots:{
+        position: "absolute",
+        bottom: "10px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        display:"flex"
+    },
 }))
 
 
@@ -61,6 +70,10 @@ const ImageSlider = () => {
 
     const prevSlide = () => {
         setCurrent(current === 0 ? length - 1 : current - 1);
+    }
+
+    const moveDot = (index) => {
+        setCurrent(index);
     }
 
     console.log(current);
@@ -82,6 +95,15 @@ const ImageSlider = () => {
                     </div>
                 )
             })}
+            <div className = {classes.containerDots}>
+                {Array.from({length: SliderData.length}).map((item, index) => (
+                    <div
+                    onClick={()=> moveDot(index)}
+                    >
+                        {current === index ? <FiberManualRecordTwoToneIcon / > : <FiberManualRecordIcon />}
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
