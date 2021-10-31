@@ -1,3 +1,3 @@
 # React Slider
 
-[http://localhost:3000](http://localhost:3000)
+[Hostlink](https://gurpreet-legend.github.io/React-Slider/)
