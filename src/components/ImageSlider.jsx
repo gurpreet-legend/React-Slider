@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     rightArrow: {
         position: "absolute",
         top: "50%",
-        right: "32px",
+        right: "18rem",
         fontSize: "3rem",
         color: "#000",
         cursor: "pointer",
@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     leftArrow: {
         position: "absolute",
         top: "50%",
-        left: "32px",
+        left: "18rem",
         fontSize: "3rem",
         color: "#000",
         cursor: "pointer",
