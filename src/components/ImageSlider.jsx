@@ -8,7 +8,7 @@ import {makeStyles} from '@mui/styles';
 const useStyles = makeStyles(theme => ({
     slider : {
         position: "relative",
-        height: "100vh",
+        height: "90vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center"
@@ -46,8 +46,7 @@ const useStyles = makeStyles(theme => ({
     slide : {
         opacity: "0",
         transitionDuration: "1s ease"
-    }
-
+    },
 }))
 
 
